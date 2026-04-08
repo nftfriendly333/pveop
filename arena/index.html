@@ -6,7 +6,7 @@
 <title>Iron Arena — PvE Hub</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
 <!-- Firebase SDK -->
-<script>
+<script type="module">
   import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js';
   import { getDatabase, ref, set, get, child, query, orderByKey, limitToFirst }
     from 'https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js';
@@ -3912,7 +3912,7 @@ function toggleHTP(btn) {
 
 
 <!-- ── PVE STORAGE + AUTH ── -->
-<script>
+<script type="module">
 // ═══════════════════════════════════════════════════════════════
 // PvE STORAGE — Firebase Realtime Database adapter
 // Replaces window.storage across all pages
@@ -4066,10 +4066,6 @@ const PveStorage = (() => {
   init();
 
   return { init, install, setUser, get, set, delete: del, list, onReady };
-})();
-window.PveStorage = PveStorage;
-const PveStorage2 = PveStorage; // alias suppress re-declaration
-(()=>{
 })();
 
 
@@ -4376,8 +4372,6 @@ const PveAuth = (() => {
 
   return { init, getProfile, saveProfile, logout, requireLogin, _connect, _shortAddr };
 })();
-window.PveAuth = PveAuth;
-window.PveStorage = PveStorage;
 
 
 
